@@ -16,10 +16,6 @@ const utils = {
         }
     },
 
-    /**
-     * Script Filter字段格式要求
-     * @see https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
-     */
     quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
     outputScriptFilter: (sf: ScriptFilter) => {

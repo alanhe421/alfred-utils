@@ -1,3 +1,6 @@
+/**
+ * @see https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
+ */
 export interface ScriptFilterItem {
     uid?: string;
     type?: string;
