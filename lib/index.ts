@@ -1,7 +1,2 @@
-import * as http from './http';
-import * as utils from './utils';
-
-export default {
-    http,
-    utils
-}
+export {default as http} from './http';
+export {default as utils} from './utils';

@@ -1,4 +1,4 @@
-import utils from "../lib/utils";
+import {utils} from "../lib";
 
 test('filterItemsBy is ok', () => {
     // title命中
