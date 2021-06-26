@@ -1,0 +1,31 @@
+{
+  "name": "alfred-utils",
+  "version": "0.1.0",
+  "description": "Offer some utils to improve alfred workflow development",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanhg/alfred-utils.git"
+  },
+  "author": "Alan He",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanhg/alfred-utils/issues"
+  },
+  "homepage": "https://github.com/alanhg/alfred-utils#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.4",
+    "husky": "^6.0.0",
+    "jest": "^27.0.5",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
+  }
+}
