@@ -1,6 +1,6 @@
 {
   "name": "@stacker/alfred-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Offer some utils to improve alfred workflow development",
   "homepage": "https://github.com/alanhg/alfred-utils#readme",
   "bugs": {
@@ -34,6 +34,7 @@
     "husky": "^6.0.0",
     "jest": "^27.0.5",
     "rimraf": "^3.0.2",
+    "standard-version": "^9.3.0",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.4"
   }
