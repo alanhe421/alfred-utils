@@ -25,6 +25,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "axios": "^0.21.1"
   },
