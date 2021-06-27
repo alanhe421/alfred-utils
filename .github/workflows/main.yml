@@ -6,6 +6,8 @@ name: Standard Version
 on:
   push:
     branches: [ master ]
+  paths:
+    - 'lib/**'
 env:
   REPO_NAME: ${{ github.event.repository.name }}
 
