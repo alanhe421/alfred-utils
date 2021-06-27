@@ -3,3 +3,5 @@ test
 .husky
 jest.config.js
 tsconfig.json
+.github
+.idea
