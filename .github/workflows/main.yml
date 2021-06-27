@@ -48,6 +48,7 @@ jobs:
         run: |
           git config --global user.email "alan@1991421.cn"
           git config --global user.name "Alan He"
+          npm run tsc
           npm run release
       - name: Push changes
         uses: ad-m/github-push-action@master
