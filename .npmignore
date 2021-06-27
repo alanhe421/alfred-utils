@@ -5,5 +5,5 @@ jest.config.js
 tsconfig.json
 .github
 .idea
-node_modules
-!dist
+# include dist
+!dist/*
