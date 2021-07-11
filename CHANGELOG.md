@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.11 (2021-07-11)
+
+
+### Bug Fixes
+
+* 针对query,进行trim ([4ef9d02](https://github.com/alanhg/alfred-utils/commit/4ef9d024709cf5efba89553613d1f6371ee58416))
+
 ### 0.1.10 (2021-06-27)
 
 ### 0.1.9 (2021-06-27)
