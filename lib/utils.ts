@@ -7,6 +7,7 @@ const utils = {
      * 如果查询关键词为空，返回原数组
      */
     filterItemsBy: (items: ScriptFilterItem[], query: string, ...params: ('title' | 'subtitle')[]) => {
+        query = query.trim();
         if (query) {
             return items.filter((item) =>
                 params.some((p) => item[p] && item[p].match(new RegExp(query, 'i')))

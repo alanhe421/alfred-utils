@@ -32,4 +32,15 @@ test('filterItemsBy is ok', () => {
             subtitle: 'hello'
         }
     ]);
+
+    // 关键词首尾空格
+    expect(utils.filterItemsBy([{
+        title: 'hello',
+        subtitle: ''
+    }], ' hel ', 'title')).toStrictEqual([
+        {
+            title: 'hello',
+            subtitle: ''
+        }
+    ]);
 });
