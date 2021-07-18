@@ -1,13 +1,13 @@
 import axios from "axios";
 
+export default {createHttpClient};
+
 /**
  * 提供HTTP请求相关能力
  */
-const createHttpClient = (baseURL: string) => {
+function createHttpClient(baseURL: string) {
     return axios.create({
         baseURL,
         headers: {},
     });
 }
-
-export default {createHttpClient};
