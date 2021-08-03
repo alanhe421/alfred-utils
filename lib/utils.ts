@@ -19,6 +19,10 @@ const utils = {
 
     quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
+    /**
+     * 过滤列表
+     * @param sf
+     */
     outputScriptFilter: (sf: ScriptFilter) => {
         console.log(JSON.stringify(sf));
     },
@@ -26,9 +30,9 @@ const utils = {
     /**
      * Script item arg为字符串，有时需要多个参数传递，可以使用字符串拼接
      */
-    joinMultiArg: (...args: string[]) => args.join(SPLIT_TOKEN),
+    joinMultiArg: (...args: (number | string | boolean) []) => args.join(SPLIT_TOKEN),
 
-    splitMultiArgStr: (argStr: string) => argStr.split(SPLIT_TOKEN),
+    splitMultiArgStr: (argStr: string): string[] => argStr.split(SPLIT_TOKEN),
 
     /**
      * Mac自带emoji表情支持

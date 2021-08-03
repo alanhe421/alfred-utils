@@ -43,4 +43,7 @@ test('filterItemsBy is ok', () => {
             subtitle: ''
         }
     ]);
+
+    // 参数合并
+    expect(utils.joinMultiArg(1, true, 'hello')).toStrictEqual('1✩true✩hello');
 });
