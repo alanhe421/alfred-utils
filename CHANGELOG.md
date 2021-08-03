@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.13 (2021-08-03)
+
+
+### Bug Fixes
+
+* 工具函数强化类型安全 ([1c2b026](https://github.com/alanhg/alfred-utils/commit/1c2b0266f6ec6dc594936d60e114ed99775b06a9))
+
 ### 0.1.12 (2021-07-18)
 
 ### 0.1.11 (2021-07-11)
