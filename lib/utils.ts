@@ -6,11 +6,13 @@ const utils = {
    * 根据params列出的属性进行过滤，不区分大小写
    * 如果查询关键词为空，返回原数组
    */
-  filterItemsBy: (items: ScriptFilterItem[], query = '', ...params: ('title' | 'subtitle')[]) => {
+  filterItemsBy: (items: ScriptFilterItem[], query = '',
+                  ...params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
     query = query.trim();
     if (query) {
       return items.filter((item) =>
-        params.some((p) => item[p] && item[p].match(new RegExp(query, 'i')))
+        // 对于没有该参数属性的，返回true，通过
+        params.some((p) => item[p]?.match(new RegExp(query, 'i')))
       );
     } else {
       return items;
