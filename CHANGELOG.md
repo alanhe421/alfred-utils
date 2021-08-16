@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.14 (2021-08-16)
+
+
+### Bug Fixes
+
+* **filter:** 过滤字段类型安全 ([49a9b3c](https://github.com/alanhg/alfred-utils/commit/49a9b3c612489446ed520accf9158eac1acb0278))
+
 ### 0.1.13 (2021-08-03)
 
 
