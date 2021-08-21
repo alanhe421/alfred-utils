@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.16 (2021-08-21)
+
+
+### Features
+
+* 更新/下载直接在库函数中支持 ([8fd757d](https://github.com/alanhg/alfred-utils/commit/8fd757d8dd5a09673bf9d9696fdfc71eed2393a9))
+
 ### 0.1.15 (2021-08-21)
 
 ### 0.1.14 (2021-08-16)
