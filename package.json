@@ -27,7 +27,9 @@
     }
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "@types/plist": "^3.0.2",
+    "axios": "^0.21.1",
+    "plist": "^3.0.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
