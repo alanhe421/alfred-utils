@@ -10,6 +10,9 @@ export interface ScriptFilterItem {
     autocomplete?: string;
     "icon"?: {
         type?: 'fileicon';
+        /**
+         * 相对路径，绝对路径均可
+         */
         path: string;
     },
     quicklookurl?: string;

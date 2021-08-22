@@ -60,7 +60,10 @@ export class WorkflowUpdater {
             return {
                 subtitle: "press ⏎ to install update",
                 title: "A new version is available!",
-                arg: 'update_workflow'
+                arg: 'update_workflow',
+                icon: {
+                    path: 'icon_update.png'
+                }
             }
         }
     }
