@@ -14,7 +14,7 @@ test('should version check', async () => {
     }
 
     expect(JSON.stringify(updater.createUpdateScriptFilterItem()))
-        .toEqual('{"subtitle":"press ⏎ to install update","title":"A new version is available!","arg":"update_workflow","icon":{"path":"icon_update.png"}}');
+        .toEqual('{"title":"🎉 A new version is available!","subtitle":"press ⏎ to install update","arg":"update_workflow","icon":{"path":"icon_update.png"}}');
 });
 
 // test('should download', async () => {
