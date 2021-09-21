@@ -41,6 +41,7 @@ export class WorkflowUpdater {
     /**
      * 下载并安装workflow
      * @param targetDir
+     * @return {Promise<boolean>}
      */
     async download(targetDir = process.env.HOME + '/Downloads/'): Promise<boolean> {
         const res = await axios.get(this.remoteWorkflowURL, {responseType: "arraybuffer"});
@@ -54,6 +55,7 @@ export class WorkflowUpdater {
 
     /**
      * 创建升级项-结果行
+     * @return {{subtitle: string, arg: string, icon: {path: string}, title: string}}
      */
     createUpdateScriptFilterItem(): ScriptFilterItem | undefined {
         if (this.shouldUpdate) {

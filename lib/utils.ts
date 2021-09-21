@@ -5,6 +5,10 @@ const utils = {
   /**
    * 根据params列出的属性进行过滤，不区分大小写
    * 如果查询关键词为空，返回原数组
+   * @param items
+   * @param query
+   * @param params
+   * @return {ScriptFilterItem[]}
    */
   filterItemsBy: (items: ScriptFilterItem[], query = '',
                   ...params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
@@ -12,14 +16,17 @@ const utils = {
     if (query) {
       return items.filter((item) =>
         // 对于没有该参数属性的，返回true，通过
-        params.some((p) => item[p]?.match(new RegExp(query, 'i')))
+        params.some((p) => item[p]?.match(new RegExp(query, 'i'))),
       );
     } else {
       return items;
     }
   },
 
-  quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
+  quickLookUrl4File: /**
+   *
+   */
+  (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
   /**
    * 过滤列表
@@ -31,9 +38,16 @@ const utils = {
 
   /**
    * Script item arg为字符串，有时需要多个参数传递，可以使用字符串拼接
+   * @param args
+   * @return {string}
    */
   joinMultiArg: (...args: (number | string | boolean) []) => args.join(SPLIT_TOKEN),
 
+  /**
+   *
+   * @param argStr
+   * @return {string[]}
+   */
   splitMultiArgStr: (argStr: string): string[] => argStr.split(SPLIT_TOKEN),
 
   /**
@@ -42,8 +56,16 @@ const utils = {
    */
   emoji: {
     checked: '☑️',
-    unchecked: '✖️'
-  }
+    unchecked: '✖️',
+  },
 };
 
 export default utils;
+
+
+export function* infiniteList() {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
