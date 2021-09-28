@@ -60,8 +60,8 @@ export class WorkflowUpdater {
     createUpdateScriptFilterItem(): ScriptFilterItem | undefined {
         if (this.shouldUpdate) {
             return {
+                title: "🎉 A new version is available!",
                 subtitle: "press ⏎ to install update",
-                title: "A new version is available!",
                 arg: 'update_workflow',
                 icon: {
                     path: 'icon_update.png'
