@@ -11,7 +11,7 @@ const utils = {
    * @return {ScriptFilterItem[]}
    */
   filterItemsBy: (items: ScriptFilterItem[], query = '',
-                  ...params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
+    ...params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
     query = query.trim();
     if (query) {
       return items.filter((item) =>
@@ -23,10 +23,13 @@ const utils = {
     }
   },
 
-  quickLookUrl4File: /**
-   *
+  /**
+   * 构建单个项
+   * @param item
    */
-  (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
+  buildItem: (item: ScriptFilterItem) => item,
+
+  quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
   /**
    * 过滤列表
@@ -61,11 +64,3 @@ const utils = {
 };
 
 export default utils;
-
-
-export function* infiniteList() {
-  let i = 0;
-  while (true) {
-    yield i++;
-  }
-}
