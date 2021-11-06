@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.22 (2021-11-06)
+
+
+### Bug Fixes
+
+* add buildItem ([d755737](https://github.com/alanhg/alfred-utils/commit/d755737c5b8ec7b40e8c297a095d53ff58a3de68))
+
 ### 0.1.21 (2021-09-28)
 
 ### 0.1.20 (2021-09-21)
