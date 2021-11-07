@@ -16,7 +16,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "TZ='Asia/Shanghai' & jest",
     "prepare": "husky install",
     "tsc": "rimraf dist && tsc -p ./tsconfig.json",
     "release": "standard-version"
