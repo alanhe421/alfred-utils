@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.23 (2021-11-07)
+
+
+### Bug Fixes
+
+* setting tz for test ([ddded1d](https://github.com/alanhg/alfred-utils/commit/ddded1d5946baee35cacae4604564b59a7e3f3c5))
+
 ### 0.1.22 (2021-11-06)
 
 
