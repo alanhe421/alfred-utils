@@ -21,6 +21,9 @@
     "tsc": "rimraf dist && tsc -p ./tsconfig.json",
     "release": "standard-version"
   },
+  "bin": {
+    "alfred-utils": "bin/index.js"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -29,6 +32,7 @@
   "dependencies": {
     "@types/plist": "^3.0.2",
     "axios": "^0.21.1",
+    "commander": "^8.3.0",
     "moment": "^2.29.1",
     "plist": "^3.0.3"
   },
