@@ -12,11 +12,10 @@ program
     init(options);
   });
 program
-  .command(`new`)
+  .command(`new <filename>`)
   .description('alfred workflow new file')
-  .argument('<filename>', 'filename')
-  .action((options) => {
-    newFile(options);
+  .action((filename) => {
+    newFile(filename);
   });
 program.version(pjson.version);
 program.parse(process.argv);
@@ -28,14 +27,13 @@ program.parse(process.argv);
 function init(options) {
   fs.copyFileSync(`${__dirname}/template/package.json`, './package.json');
   fs.copyFileSync(`${__dirname}/template/template.js`, './index.js');
-  execSync('npm install', {stdio:[0,1,2]});
+  execSync('npm install', {stdio: [0, 1, 2]});
 }
 
 /**
  * new file with name
- * @param options
+ * @param filename
  */
-function newFile(options) {
-  console.log(options);
-  fs.copyFileSync(`${__dirname}/template.js`, `./${options.filename}.js`);
+function newFile(filename) {
+  fs.copyFileSync(`${__dirname}/template/template.js`, `./${filename}.js`);
 }
