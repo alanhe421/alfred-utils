@@ -21,7 +21,8 @@
     "release": "standard-version"
   },
   "bin": {
-    "alfred-utils": "bin/index.js"
+    "alfred-utils": "bin/index.js",
+    "alfred-utils-test": "bin/test.js"
   },
   "config": {
     "commitizen": {
