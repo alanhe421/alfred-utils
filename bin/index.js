@@ -2,6 +2,8 @@
 const program = require('commander');
 const fs = require('fs');
 const {log} = require("util");
+const pjson = require('../package.json');
+
 program
   .command(`init`)
   .description('alfred workflow init')
@@ -15,7 +17,7 @@ program
   .action((options) => {
     newFile(options);
   });
-
+program.version(pjson.version);
 program.parse(process.argv);
 
 /**
