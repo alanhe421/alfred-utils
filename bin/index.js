@@ -28,7 +28,7 @@ program.parse(process.argv);
 function init(options) {
   fs.copyFileSync(`${__dirname}/template/package.json`, './package.json');
   fs.copyFileSync(`${__dirname}/template/template.js`, './index.js');
-  execSync('npm install');
+  execSync('npm install', {stdio:[0,1,2]});
 }
 
 /**
