@@ -8,4 +8,10 @@
 
 $ npm i @stacker/alfred-utils --save
 
+# cli usage
+$ npx @stacker/alfred-utils init
+$ npx @stacker/alfred-utils new <filename>
+
+
+
 ```
