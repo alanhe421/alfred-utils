@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander');
 const fs = require('fs');
-const {log} = require("util");
 const {execSync} = require("child_process");
 const pjson = require('../package.json');
 
@@ -26,7 +25,7 @@ program.parse(process.argv);
  */
 function init(options) {
   fs.copyFileSync(`${__dirname}/template/package.json`, './package.json');
-  fs.copyFileSync(`${__dirname}/template/template.js`, './index.js');
+  newFile('index');
   execSync('npm install', {stdio: [0, 1, 2]});
 }
 
@@ -35,5 +34,7 @@ function init(options) {
  * @param filename
  */
 function newFile(filename) {
-  fs.copyFileSync(`${__dirname}/template/template.js`, `./${filename}.js`);
+  let content = fs.readFileSync(`${__dirname}/template/template.js`, {encoding: 'utf8'});
+  content = content.replace(/__filename__/g, filename);
+  fs.writeFileSync(`./${filename}.js`, content);
 }
