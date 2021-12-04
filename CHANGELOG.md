@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.28 (2021-12-04)
+
+
+### Bug Fixes
+
+* http 404 ([3e05f87](https://github.com/alanhg/alfred-utils/commit/3e05f87edd9265829dee1e8d2fe3be5a4efa5720))
+
 ### 0.1.27 (2021-12-04)
 
 
