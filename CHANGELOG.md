@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.27 (2021-12-04)
+
+
+### Bug Fixes
+
+* add some script comment ([eaf51ec](https://github.com/alanhg/alfred-utils/commit/eaf51ecb4ab44fa20d8dd879d274805a81750c84))
+
 ### 0.1.26 (2021-12-01)
 
 ### 0.1.25 (2021-12-01)
