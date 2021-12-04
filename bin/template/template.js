@@ -2,6 +2,6 @@
  * usage
  * /usr/local/bin/node ./__filename__.js
  */
-const {utils} = require('@stacker/alfred-utils');
+const {utils, http} = require('@stacker/alfred-utils');
 const [, ,] = process.argv;
-const instance = require('./axios').createHttpClient();
+const instance = http.createHttpClient();
