@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.29 (2021-12-06)
+
+
+### Features
+
+* add main func ([48f54e4](https://github.com/alanhg/alfred-utils/commit/48f54e4b0b15ffa815b01bb6d6dbf6944434e586))
+
 ### 0.1.28 (2021-12-04)
 
 
