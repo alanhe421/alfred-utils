@@ -17,6 +17,9 @@ export interface ScriptFilterItem {
      */
     path: string;
   },
+  /**
+   * url,filepath,相对路径，绝对路径均可
+   */
   quicklookurl?: string;
   text?: {
     copy?: string;
