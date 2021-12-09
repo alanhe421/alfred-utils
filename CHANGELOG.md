@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.30 (2021-12-09)
+
+
+### Bug Fixes
+
+* 补充字段注释 ([7751e2a](https://github.com/alanhg/alfred-utils/commit/7751e2ae65e319b0eefe197853df0a37b7b3f403))
+
 ### 0.1.29 (2021-12-06)
 
 
