@@ -7,7 +7,7 @@ const [, ,] = process.argv;
 const instance = http.createHttpClient();
 
 (function () {
-  utils.outputScriptFilter({
+  utils.printScriptFilter({
     items: [
       utils.buildItem({
         title: 'hello',

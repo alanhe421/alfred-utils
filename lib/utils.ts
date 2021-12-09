@@ -32,10 +32,10 @@ const utils = {
   quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
   /**
-   * 过滤列表
+   * 输出列表
    * @param sf
    */
-  outputScriptFilter: (sf: ScriptFilter) => {
+  printScriptFilter: (sf: ScriptFilter) => {
     console.log(JSON.stringify(sf));
   },
 
