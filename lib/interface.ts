@@ -5,7 +5,7 @@ type ModifierKey = 'alt' | 'cmd';
  */
 export interface ScriptFilterItem {
   uid?: string;
-  type?: string;
+  type?: 'default' | 'file' | 'file:skipcheck';
   title: string;
   subtitle: string;
   arg?: string;
