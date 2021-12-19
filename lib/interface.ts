@@ -4,6 +4,9 @@ type ModifierKey = 'alt' | 'cmd';
  * @see https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
  */
 export interface ScriptFilterItem {
+  /**
+   * 每个 item 的唯一标识，后续 Alfred 能依托这个 uid，根据用户操作进行排序。如果想保持自己脚本返回的顺序，不用 Alfred 的排序，可以不设置这个字段。
+   */
   uid?: string;
   type?: 'default' | 'file' | 'file:skipcheck';
   title: string;
