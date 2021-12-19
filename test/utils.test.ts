@@ -1,4 +1,5 @@
 import { utils } from '../lib';
+import { Workflow } from '../lib/workflow';
 
 test('filterItemsBy is ok', () => {
   // title命中
@@ -61,20 +62,20 @@ test('filterItemsBy query is undefined', () => {
 });
 
 test('order by score', () => {
-  let scriptFilterItems = utils.convertWorkflowItems([
-    utils.buildWorkflowItem({
-      item: {
-        title: 'hello',
-        subtitle: 'hello123',
-      },
-    }),
-    utils.buildWorkflowItem({
-      item: {
-        title: 'beijing',
-        subtitle: 'hello kitty',
-      },
-      score: 99,
-    }),
-  ]);
+  const wf = new Workflow();
+  wf.addWorkflowItem({
+    item: {
+      title: 'hello',
+      subtitle: 'hello123',
+    },
+  });
+  wf.addWorkflowItem({
+    item: {
+      title: 'beijing',
+      subtitle: 'hello kitty',
+    },
+    score: 1,
+  });
+  let scriptFilterItems = wf.convertWorkflowItems();
   expect(scriptFilterItems[0].title).toEqual('beijing');
 });
