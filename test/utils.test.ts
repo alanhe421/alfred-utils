@@ -4,44 +4,44 @@ test('filterItemsBy is ok', () => {
   // title命中
   expect(utils.filterItemsBy([{
     title: 'hello',
-    subtitle: ''
+    subtitle: '',
   }], 'hel', 'title')).toStrictEqual([
     {
       title: 'hello',
-      subtitle: ''
-    }
+      subtitle: '',
+    },
   ]);
   // subtitle命中
   expect(utils.filterItemsBy([{
     title: 'zxxx',
-    subtitle: 'hello'
+    subtitle: 'hello',
   }], 'hel', 'title', 'subtitle')).toStrictEqual([
     {
       title: 'zxxx',
-      subtitle: 'hello'
-    }
+      subtitle: 'hello',
+    },
   ]);
 
   // 关键词为空
   expect(utils.filterItemsBy([{
     title: 'zxxx',
-    subtitle: 'hello'
+    subtitle: 'hello',
   }], '', 'title', 'subtitle')).toStrictEqual([
     {
       title: 'zxxx',
-      subtitle: 'hello'
-    }
+      subtitle: 'hello',
+    },
   ]);
 
   // 关键词首尾空格
   expect(utils.filterItemsBy([{
     title: 'hello',
-    subtitle: ''
+    subtitle: '',
   }], ' hel ', 'title')).toStrictEqual([
     {
       title: 'hello',
-      subtitle: ''
-    }
+      subtitle: '',
+    },
   ]);
 
   // 参数合并
@@ -51,12 +51,30 @@ test('filterItemsBy is ok', () => {
 test('filterItemsBy query is undefined', () => {
   expect(utils.filterItemsBy([{
     title: 'hello',
-    subtitle: ''
+    subtitle: '',
   }], undefined, 'title')).toStrictEqual([
     {
       title: 'hello',
-      subtitle: ''
-    }
+      subtitle: '',
+    },
   ]);
 });
 
+test('order by score', () => {
+  let scriptFilterItems = utils.convertWorkflowItems([
+    utils.buildWorkflowItem({
+      item: {
+        title: 'hello',
+        subtitle: 'hello123',
+      },
+    }),
+    utils.buildWorkflowItem({
+      item: {
+        title: 'beijing',
+        subtitle: 'hello kitty',
+      },
+      score: 99,
+    }),
+  ]);
+  expect(scriptFilterItems[0].title).toEqual('beijing');
+});

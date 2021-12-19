@@ -1,6 +1,17 @@
 type ModifierKey = 'alt' | 'cmd';
 
 /**
+ * 工具类初始化搜索项，最终转化成ScriptFilterItem进行打印
+ */
+export interface WorkflowItem {
+  item: ScriptFilterItem;
+  /**
+   * 分值越高，排名越靠前
+   */
+  score?: number;
+}
+
+/**
  * @see https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
  */
 export interface ScriptFilterItem {
@@ -46,7 +57,6 @@ export interface ScriptFilterItem {
     }
   }
 }
-
 
 export interface ScriptFilter {
   items: ScriptFilterItem[];
