@@ -1,7 +1,26 @@
-import { ScriptFilter, ScriptFilterItem } from './interface';
+import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
 
 const SPLIT_TOKEN = '✩';
+
+
 const utils = {
+  /**
+   * 根据score进行再排序,大的向前排
+   * 转换为ScriptFilterItem
+   * @param sf
+   */
+  convertWorkflowItems(items: WorkflowItem[]) {
+    return items.sort((a, b) => {
+      return (b.score ?? 0) - (a.score ?? 0);
+    }).map(item => item.item);
+  },
+
+  /**
+   * 构建搜索项
+   * @param item
+   */
+  buildWorkflowItem: (item: WorkflowItem) => item,
+
   /**
    * 根据params列出的属性进行过滤，不区分大小写
    * 如果查询关键词为空，返回原数组
