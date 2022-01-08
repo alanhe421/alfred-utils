@@ -6,7 +6,7 @@
 
 ```shell
 
-$ npm i @stacker/alfred-utils --save
+$ npm i @stacker/alfred-utils
 
 # cli usage
 $ npx @stacker/alfred-utils init
