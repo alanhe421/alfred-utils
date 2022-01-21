@@ -6,7 +6,6 @@ const SPLIT_TOKEN = '✩';
 const utils = {
 
 
-
   /**
    * 根据params列出的属性进行过滤，不区分大小写
    * 如果查询关键词为空，返回原数组
@@ -16,7 +15,7 @@ const utils = {
    * @return {ScriptFilterItem[]}
    */
   filterItemsBy: (items: ScriptFilterItem[], query = '',
-    ...params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
+    params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
     query = query.trim();
     if (query) {
       return items.filter((item) =>

@@ -6,7 +6,7 @@ test('filterItemsBy is ok', () => {
   expect(utils.filterItemsBy([{
     title: 'hello',
     subtitle: '',
-  }], 'hel', 'title')).toStrictEqual([
+  }], 'hel', ['title'])).toStrictEqual([
     {
       title: 'hello',
       subtitle: '',
@@ -16,18 +16,24 @@ test('filterItemsBy is ok', () => {
   expect(utils.filterItemsBy([{
     title: 'zxxx',
     subtitle: 'hello',
-  }], 'hel', 'title', 'subtitle')).toStrictEqual([
+  }], 'hel', ['title', 'subtitle'])).toStrictEqual([
     {
       title: 'zxxx',
       subtitle: 'hello',
     },
   ]);
 
+  // 无命中项
+  expect(utils.filterItemsBy([{
+    title: 'zxxx',
+    subtitle: 'hello',
+  }], '123', ['title', 'subtitle'])).toStrictEqual([]);
+
   // 关键词为空
   expect(utils.filterItemsBy([{
     title: 'zxxx',
     subtitle: 'hello',
-  }], '', 'title', 'subtitle')).toStrictEqual([
+  }], '', ['title', 'subtitle'])).toStrictEqual([
     {
       title: 'zxxx',
       subtitle: 'hello',
@@ -38,7 +44,7 @@ test('filterItemsBy is ok', () => {
   expect(utils.filterItemsBy([{
     title: 'hello',
     subtitle: '',
-  }], ' hel ', 'title')).toStrictEqual([
+  }], ' hel ', ['title'])).toStrictEqual([
     {
       title: 'hello',
       subtitle: '',
@@ -53,7 +59,7 @@ test('filterItemsBy query is undefined', () => {
   expect(utils.filterItemsBy([{
     title: 'hello',
     subtitle: '',
-  }], undefined, 'title')).toStrictEqual([
+  }], undefined, ['title'])).toStrictEqual([
     {
       title: 'hello',
       subtitle: '',
