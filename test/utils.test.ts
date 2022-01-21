@@ -29,6 +29,22 @@ test('filterItemsBy is ok', () => {
     subtitle: 'hello',
   }], '123', ['title', 'subtitle'])).toStrictEqual([]);
 
+
+  expect(utils.filterItemsBy([{
+    title: 'zxxx',
+    subtitle: 'hello',
+  }], '123', ['title', 'subtitle'], utils.buildItem({
+    title: 'no match item',
+    subtitle: 'enter to view web',
+
+  }))).toStrictEqual([
+    {
+      title: 'no match item',
+      subtitle: 'enter to view web',
+    },
+  ]);
+
+
   // 关键词为空
   expect(utils.filterItemsBy([{
     title: 'zxxx',

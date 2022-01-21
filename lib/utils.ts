@@ -1,4 +1,4 @@
-import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
+import { ScriptFilter, ScriptFilterItem } from './interface';
 
 const SPLIT_TOKEN = '✩';
 
@@ -12,16 +12,23 @@ const utils = {
    * @param items
    * @param query
    * @param params
+   * @param noResultsItem 如果过滤完没有结果则显示该条目
    * @return {ScriptFilterItem[]}
    */
-  filterItemsBy: (items: ScriptFilterItem[], query = '',
-    params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[]) => {
+  filterItemsBy: (items: ScriptFilterItem[],
+    query = '',
+    params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[],
+    noResultsItem?: ScriptFilterItem) => {
     query = query.trim();
     if (query) {
-      return items.filter((item) =>
+      let filterItems = items.filter((item) =>
         // 对于没有该参数属性的，返回true，通过
         params.some((p) => item[p]?.match(new RegExp(query, 'i'))),
       );
+      if (filterItems.length === 0 && noResultsItem) {
+        return [noResultsItem];
+      }
+      return filterItems;
     } else {
       return items;
     }
