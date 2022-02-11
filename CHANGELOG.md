@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.35 (2022-02-11)
+
+
+### Bug Fixes
+
+* add node-notifier ([325816c](https://github.com/alanhg/alfred-utils/commit/325816c71edd3429e0d8c1a77e4713b88647268b))
+
 ### 0.1.34 (2022-01-21)
 
 
