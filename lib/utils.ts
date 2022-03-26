@@ -1,6 +1,6 @@
+import { execSync } from 'child_process';
+
 const SPLIT_TOKEN = '✩';
-
-
 const utils = {
 
 
@@ -27,6 +27,23 @@ const utils = {
   emoji: {
     checked: '☑️',
     unchecked: '✖️',
+  },
+
+  /**
+   * 设置当前workflow环境变量
+   * @param key
+   * @param value
+   */
+  setVariable: (key: string, value: any) => {
+    execSync(`osascript -e 'tell application id "com.runningwithcrayons.Alfred" to set configuration "${key}" to value "${String(value)}" in workflow "${process.env.alfred_workflow_bundleid}"'`);
+  },
+
+  /**
+   * 删除当前workflow环境变量
+   * @param key
+   */
+  removeVariable: (key: string) => {
+    execSync(`osascript -e 'tell application id "com.runningwithcrayons.Alfred" to remove configuration "${key}" in workflow "${process.env.alfred_workflow_bundleid}"'`);
   },
 };
 

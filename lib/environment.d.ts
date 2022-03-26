@@ -37,6 +37,9 @@ declare global {
              */
             PWD: string;
             XPC_FLAGS: string;
+            /**
+             * 比如 pic.alanhe.me
+             */
             alfred_workflow_bundleid: string;
             https_proxy: string;
             XPC_SERVICE_NAME: string;
@@ -45,6 +48,9 @@ declare global {
             no_proxy: string;
             LOGNAME: string;
             LC_CTYPE: string;
+            /**
+             * 比如 user.workflow.FE0253CA-60AA-46B0-95AA-E0C280C774F0
+             */
             alfred_workflow_uid: string;
             alfred_workflow_name: string;
             SECURITYSESSIONID: string;
