@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.36 (2022-03-26)
+
+
+### Features
+
+* **environment variable:** 支持写删 ([0c04bb6](https://github.com/alanhg/alfred-utils/commit/0c04bb62cb2d05875b76f6447e954ae7c57043da))
+
 ### 0.1.35 (2022-02-11)
 
 
