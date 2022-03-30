@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.37 (2022-03-30)
+
+
+### Features
+
+* **filter:** 支持拼音检索 ([fab126e](https://github.com/alanhg/alfred-utils/commit/fab126e37b1b777e72b817a5f46f9c75162fb7c1))
+
 ### 0.1.36 (2022-03-26)
 
 
