@@ -67,8 +67,22 @@ test('filterItemsBy is ok', () => {
     },
   ]);
 
+
   // 参数合并
   expect(utils.joinMultiArg(1, true, 'hello')).toStrictEqual('1✩true✩hello');
+});
+
+test('中文拼音处理', () => {
+  expect(utils.filterItemsBy([{
+    title: '[express demo 测试]本地环境配置',
+    subtitle: 'hello',
+  }], 'bendi', ['title', 'subtitle'])).toStrictEqual([
+    {
+      title: '[express demo 测试]本地环境配置',
+      subtitle: 'hello',
+    },
+  ]);
+
 });
 
 test('filterItemsBy query is undefined', () => {

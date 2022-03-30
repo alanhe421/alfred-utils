@@ -1,8 +1,11 @@
 import { ScriptFilter, ScriptFilterItem } from './interface';
+import { pinyin } from 'pinyin-pro';
 
 import { execSync } from 'child_process';
 
 const SPLIT_TOKEN = '✩';
+const CN_CHAR_REGEX = /[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
+
 const utils = {
 
 
@@ -21,9 +24,21 @@ const utils = {
     noResultsItem?: ScriptFilterItem) => {
     query = query.trim();
     if (query) {
-      let filterItems = items.filter((item) =>
-        // 对于没有该参数属性的，返回true，通过
-        params.some((p) => item[p]?.match(new RegExp(query, 'i'))),
+      let filterItems = items.filter((item) => {
+          // 对于没有该参数属性的，返回true，通过
+          return params.some((p) => {
+            if (item[p] === undefined) {
+              return;
+            }
+            if (item[p]?.match(CN_CHAR_REGEX) && !query.match(CN_CHAR_REGEX)) {
+              return pinyin(item[p] as any, {
+                toneType: 'none',
+                nonZh: 'consecutive',
+              }).replace(/\s/g, '')!.match(new RegExp(query, 'i'));
+            }
+            return item[p]!.match(new RegExp(query, 'i'));
+          });
+        },
       );
       if (filterItems.length === 0 && noResultsItem) {
         return [noResultsItem];

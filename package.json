@@ -34,6 +34,7 @@
     "commander": "^8.3.0",
     "moment": "^2.29.1",
     "node-notifier": "^10.0.1",
+    "pinyin-pro": "^3.8.2",
     "plist": "^3.0.3"
   },
   "devDependencies": {
