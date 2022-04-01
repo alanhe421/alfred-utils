@@ -119,3 +119,7 @@ test('order by score', () => {
 test('bytes format', () => {
   expect(utils.formatBytes(3000, 2)).toEqual('2.93 KB');
 });
+
+test('mac feat test', () => {
+  expect(utils.copyToClipboard(`/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/cn.alanhe.giphy/qLw4x1K59L0iI_preview.gif`)).toEqual(undefined);
+});

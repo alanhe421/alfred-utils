@@ -29,6 +29,9 @@ declare global {
             alfred_theme_selection_background: string;
             alfred_theme_subtext: string;
             PATH: string;
+            /**
+             * ~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/[bundle id]
+             */
             alfred_workflow_cache: string;
             LaunchInstanceID: string;
             alfred_debug: string;

@@ -1,7 +1,9 @@
 import { ScriptFilter, ScriptFilterItem } from './interface';
 import { pinyin } from 'pinyin-pro';
+import querystring from 'querystring';
 
 import { execSync } from 'child_process';
+
 
 const SPLIT_TOKEN = '✩';
 const CN_CHAR_REGEX = /[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
@@ -103,6 +105,14 @@ const utils = {
    */
   removeVariable: (key: string) => {
     execSync(`osascript -e 'tell application id "com.runningwithcrayons.Alfred" to remove configuration "${key}" in workflow "${process.env.alfred_workflow_bundleid}"'`);
+  },
+
+  /**
+   * 拷贝到系统剪贴板
+   */
+  copyToClipboard(thePath: string) {
+    thePath = thePath.replace(/\s/g, '%20');
+    execSync(`osascript -e 'set the clipboard to POSIX file "${thePath}"\n delay 1'`);
   },
 
   formatBytes(bytes: number, decimals = 2) {
