@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.38 (2022-04-01)
+
+
+### Features
+
+* **clipboard:** 支持拷贝文件到系统剪贴板 ([7b4cf4c](https://github.com/alanhg/alfred-utils/commit/7b4cf4cb0c9f8a6db8f33e7cbd3c6151a5662df2))
+
 ### 0.1.37 (2022-03-30)
 
 
