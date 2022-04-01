@@ -115,3 +115,7 @@ test('order by score', () => {
   let scriptFilterItems = wf.convertWorkflowItems();
   expect(scriptFilterItems[0].title).toEqual('beijing');
 });
+
+test('bytes format', () => {
+  expect(utils.formatBytes(3000, 2)).toEqual('2.93 KB');
+});
