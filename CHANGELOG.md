@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.40 (2022-04-03)
+
+
+### Bug Fixes
+
+* **date-utils:** 类型安全调整 ([ee85b8d](https://github.com/alanhg/alfred-utils/commit/ee85b8dc4b433eeb3ecfb8ee1b1f377a745c173f))
+
 ### 0.1.39 (2022-04-02)
 
 ### 0.1.38 (2022-04-01)
