@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.41 (2022-04-05)
+
+
+### Bug Fixes
+
+* **ts:** 全局定义文件需要包含在发布文件中 ([425366a](https://github.com/alanhg/alfred-utils/commit/425366ae87ee41edf053ec0d7b65c832fd01cae7))
+
 ### 0.1.40 (2022-04-03)
 
 
