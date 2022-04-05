@@ -1,3 +1,5 @@
+/// <reference path="./node_modules/@stacker/alfred-utils/dist/environment.d.ts" />
+
 /**
  * usage
  * /usr/local/bin/node ./__filename__.js {query}
