@@ -21,7 +21,8 @@
   "scripts": {
     "release": "standard-version",
     "test": "TZ='Asia/Shanghai' jest",
-    "tsc": "rimraf dist && tsc -p ./tsconfig.json"
+    "tsc": "rimraf dist && tsc -p ./tsconfig.json",
+    "build": "npm run tsc && cp lib/*.d.ts dist/"
   },
   "config": {
     "commitizen": {
