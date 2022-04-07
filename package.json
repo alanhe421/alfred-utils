@@ -30,7 +30,6 @@
     }
   },
   "dependencies": {
-    "@types/plist": "^3.0.2",
     "axios": "^0.21.1",
     "commander": "^8.3.0",
     "moment": "^2.29.1",
@@ -42,6 +41,7 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.4",
     "@types/node-notifier": "^8.0.2",
+    "@types/plist": "^3.0.2",
     "husky": "4.3.8",
     "jest": "^27.0.5",
     "rimraf": "^3.0.2",
