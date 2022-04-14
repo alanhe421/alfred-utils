@@ -88,6 +88,7 @@ const utils = {
   emoji: {
     checked: '☑️',
     unchecked: '✖️',
+    locked: '🔒',
   },
 
   /**
