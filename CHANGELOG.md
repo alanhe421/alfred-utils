@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.43 (2022-04-14)
+
+
+### Bug Fixes
+
+* **utils:** 补充emoji ([c50657e](https://github.com/alanhg/alfred-utils/commit/c50657ef425dd916940dba0cd046079aac3d7772))
+
 ### 0.1.42 (2022-04-05)
 
 
