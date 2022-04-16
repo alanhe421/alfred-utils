@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.45 (2022-04-16)
+
+
+### Bug Fixes
+
+* **utils:** add log method ([a389c22](https://github.com/alanhg/alfred-utils/commit/a389c22f68054e1baf4529cc391cd9966f18e60c))
+
 ### 0.1.44 (2022-04-16)
 
 
