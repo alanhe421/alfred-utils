@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.44 (2022-04-16)
+
+
+### Bug Fixes
+
+* **utils:** 创建缓存文件夹 ([271790a](https://github.com/alanhg/alfred-utils/commit/271790a797cb2372c57fe9c430cef95282b1dc6e))
+
 ### 0.1.43 (2022-04-14)
 
 
