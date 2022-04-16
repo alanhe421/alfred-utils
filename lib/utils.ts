@@ -127,6 +127,13 @@ const utils = {
 
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
   },
+
+  /**
+   * 创建缓存文件夹
+   */
+  useCache() {
+    execSync(`[[ -d "${process.env.alfred_workflow_cache}" ]] || mkdir "${process.env.alfred_workflow_cache}"`);
+  },
 };
 
 export default utils;
