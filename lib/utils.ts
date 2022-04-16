@@ -134,6 +134,14 @@ const utils = {
   useCache() {
     execSync(`[[ -d "${process.env.alfred_workflow_cache}" ]] || mkdir "${process.env.alfred_workflow_cache}"`);
   },
+
+  /**
+   * 不添加新行打印
+   * @param options
+   */
+  log(...options: Parameters<typeof process.stdout.write>) {
+    process.stdout.write(...options);
+  },
 };
 
 export default utils;
