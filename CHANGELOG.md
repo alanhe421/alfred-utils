@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.46 (2022-04-16)
+
+
+### Bug Fixes
+
+* **utils:** escape file path ([9f4809d](https://github.com/alanhg/alfred-utils/commit/9f4809d766f33c955f577e2730452244cb3c7e79))
+
 ### 0.1.45 (2022-04-16)
 
 
