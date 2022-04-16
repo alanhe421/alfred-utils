@@ -57,6 +57,12 @@ const utils = {
    */
   buildItem: (item: ScriptFilterItem) => item,
 
+  /**
+   * 路径中空格加转义字符
+   * @param filepath
+   */
+  escapeFilePath: (filepath: string) => filepath.replace(/(\s)/, '\\$1'),
+
   quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
 
   /**

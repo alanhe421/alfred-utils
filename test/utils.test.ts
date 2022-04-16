@@ -123,3 +123,8 @@ test('bytes format', () => {
 test('mac feat test', () => {
   expect(utils.copyToClipboard(`/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/cn.alanhe.giphy/qLw4x1K59L0iI_preview.gif`)).toEqual(undefined);
 });
+
+test('escape path test', () => {
+  const res = utils.escapeFilePath(`/Users/alanhe/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data`);
+  expect(res).toEqual('/Users/alanhe/Library/Caches/com.runningwithcrayons.Alfred/Workflow\\ Data');
+});
