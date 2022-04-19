@@ -1,10 +1,12 @@
-import { ScriptFilterItem, WorkflowItem } from './interface';
+import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
 
 export class Workflow {
   private items: WorkflowItem[];
+  private sortedItems: ScriptFilterItem[];
 
   constructor(items: WorkflowItem[] = []) {
     this.items = items;
+    this.sortedItems = [];
   }
 
   /**
@@ -12,10 +14,11 @@ export class Workflow {
    * 转换为ScriptFilterItem
    * @param sf
    */
-  convertWorkflowItems(): ScriptFilterItem[] {
-    return this.items.sort((a, b) => {
+  private convertWorkflowItems(): this {
+    this.sortedItems = this.items.sort((a, b) => {
       return (b.score ?? 0) - (a.score ?? 0);
     }).map(item => item.item);
+    return this;
   }
 
 
@@ -26,5 +29,15 @@ export class Workflow {
   addWorkflowItem(item: WorkflowItem) {
     this.items.push(item);
     return this;
+  }
+
+  /**
+   * 输出
+   */
+  run(config: Omit<ScriptFilter, 'items'> = {}) {
+    console.log(JSON.stringify({
+      ...config,
+      items: this.convertWorkflowItems().sortedItems,
+    }));
   }
 }
