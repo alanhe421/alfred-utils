@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.47 (2022-04-19)
+
+
+### Bug Fixes
+
+* **workflow:** 完善workflow类 ([86a5523](https://github.com/alanhg/alfred-utils/commit/86a5523763b001f1fcb28330512332462c0163dd))
+
 ### 0.1.46 (2022-04-16)
 
 
