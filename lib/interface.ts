@@ -55,6 +55,15 @@ export interface ScriptFilterItem {
       icon: string;
       variables: ScriptFilter['variables']
     }
+  },
+  action?: string | string[] | {
+    text?: string[],
+    url?: string,
+    /**
+     * 文件绝对路径
+     */
+    file?: string,
+    auto?: string
   }
 }
 
