@@ -63,7 +63,10 @@ export interface ScriptFilterItem {
      * 文件绝对路径
      */
     file?: string,
-    auto?: string
+    /**
+     * 以上三种类型均可
+     */
+    auto?: string | string[];
   }
 }
 
