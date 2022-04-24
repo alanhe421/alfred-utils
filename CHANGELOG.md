@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.50 (2022-04-24)
+
+
+### Bug Fixes
+
+* **workflow:** 支持写入剪贴板图片到某路径 ([116d176](https://github.com/alanhg/alfred-utils/commit/116d17662eba647024c391311d7974b26dc27a33))
+
 ### 0.1.49 (2022-04-20)
 
 

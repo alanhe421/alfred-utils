@@ -1,6 +1,6 @@
 {
   "name": "@stacker/alfred-utils",
-  "version": "0.1.49",
+  "version": "0.1.50",
   "description": "Offer some utils to improve alfred workflow development",
   "homepage": "https://github.com/alanhg/alfred-utils#readme",
   "bugs": {
