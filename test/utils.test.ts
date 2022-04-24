@@ -125,6 +125,10 @@ test('mac feat test', () => {
 });
 
 test('escape path test', () => {
-  const res = utils.escapeFilePath(`/Users/alanhe/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data`);
+  const res = utils.escapeFilePath(`~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data`);
   expect(res).toEqual('/Users/alanhe/Library/Caches/com.runningwithcrayons.Alfred/Workflow\\ Data');
+});
+
+test('write pic file test', () => {
+  utils.writeToPicFileFromClipboard(`~/Desktop/aaa.png`);
 });

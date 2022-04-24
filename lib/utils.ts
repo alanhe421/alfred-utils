@@ -1,12 +1,17 @@
 import { ScriptFilter, ScriptFilterItem } from './interface';
 import { pinyin } from 'pinyin-pro';
-import querystring from 'querystring';
 
 import { execSync } from 'child_process';
 
 
 const SPLIT_TOKEN = '✩';
 const CN_CHAR_REGEX = /[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
+
+const pathUtils = {
+  replaceSpace: (path: string) => path.replace(/\s/g, '%20'),
+  replaceRelativeHomePath: (path: string) => path.replace('~', process.env.HOME),
+  process: (path: string) => pathUtils.replaceRelativeHomePath(pathUtils.replaceSpace(path)),
+};
 
 const utils = {
 
@@ -61,9 +66,9 @@ const utils = {
    * 路径中空格加转义字符
    * @param filepath
    */
-  escapeFilePath: (filepath: string) => filepath.replace(/(\s)/, '\\$1'),
+  escapeFilePath: (filepath: string) => pathUtils.replaceRelativeHomePath(filepath).replace(/(\s)/, '\\$1'),
 
-  quickLookUrl4File: (filename: string) => `file://${filename.replace(/\s/g, '%20')}`,
+  quickLookUrl4File: (filename: string) => `file://${pathUtils.replaceSpace(filename)}`,
 
   /**
    * 输出列表
@@ -118,8 +123,33 @@ const utils = {
    * 拷贝到系统剪贴板
    */
   copyToClipboard(thePath: string) {
-    thePath = thePath.replace(/\s/g, '%20');
+    thePath = pathUtils.replaceSpace(thePath);
     execSync(`osascript -e 'set the clipboard to POSIX file "${thePath}"\n delay 1'`);
+  },
+
+  /**
+   * 剪贴板图片另存到某位置
+   * @param filePath
+   */
+  writeToPicFileFromClipboard(filePath: string) {
+    filePath = pathUtils.process(filePath);
+    execSync(`osascript -e 'try
+  set imageData to the clipboard as {«class PNGf»}
+on error
+  tell me to error "Clipboard data does not seem to be an image"
+end try
+
+set filePath to "${filePath}"
+try
+set imageFile to open for access filePath with write permission
+write imageData to imageFile
+close access imageFile
+on error
+try
+        close access myFile
+    end try
+end try
+'`);
   },
 
   formatBytes(bytes: number, decimals = 2) {
