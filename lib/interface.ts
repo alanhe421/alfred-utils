@@ -75,5 +75,9 @@ export interface ScriptFilter {
   variables?: {
     [index: string]: string;
   },
+  /**
+   * 0.1-5.0秒之后重新run
+   * @since 3.2
+   */
   rerun?: number;
 }

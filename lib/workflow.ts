@@ -1,12 +1,30 @@
 import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
+import utils from "./utils";
 
 export class Workflow {
   private items: WorkflowItem[];
   private sortedItems: ScriptFilterItem[];
 
-  constructor(items: WorkflowItem[] = []) {
+  constructor(items: WorkflowItem[] = [], cacheable = false) {
     this.items = items;
     this.sortedItems = [];
+
+    if (cacheable) {
+      utils.useCache();
+    }
+  }
+
+  /**
+   * 缓存数据显示
+   */
+  runCacheData() {
+    return utils.readCacheData<WorkflowItem[]>('script_filter').then(data => {
+      if (data) {
+        this.items = data;
+        this.run();
+        this.items = [];
+      }
+    });
   }
 
   /**
@@ -34,7 +52,10 @@ export class Workflow {
   /**
    * 输出
    */
-  run(config: Omit<ScriptFilter, 'items'> = {}) {
+  run(config: Omit<ScriptFilter, 'items'> = {}, maxAge = 0) {
+    if (maxAge > 0) {
+      utils.writeCacheData('script_filter', maxAge, this.items);
+    }
     console.log(JSON.stringify({
       ...config,
       items: this.convertWorkflowItems().sortedItems,

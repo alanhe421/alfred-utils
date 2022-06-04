@@ -2,6 +2,7 @@ import { ScriptFilter, ScriptFilterItem } from './interface';
 import { pinyin } from 'pinyin-pro';
 
 import { execSync } from 'child_process';
+import fs from "fs";
 
 
 const SPLIT_TOKEN = '✩';
@@ -26,26 +27,26 @@ const utils = {
    * @return {ScriptFilterItem[]}
    */
   filterItemsBy: (items: ScriptFilterItem[],
-    query = '',
-    params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[],
-    noResultsItem?: ScriptFilterItem) => {
+                  query = '',
+                  params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[],
+                  noResultsItem?: ScriptFilterItem) => {
     query = query.trim();
     if (query) {
       let filterItems = items.filter((item) => {
-          // 对于没有该参数属性的，返回true，通过
-          return params.some((p) => {
-            if (item[p] === undefined) {
-              return;
-            }
-            if (item[p]?.match(CN_CHAR_REGEX) && !query.match(CN_CHAR_REGEX)) {
-              return pinyin(item[p] as any, {
-                toneType: 'none',
-                nonZh: 'consecutive',
-              }).replace(/\s/g, '')!.match(new RegExp(query, 'i'));
-            }
-            return item[p]!.match(new RegExp(query, 'i'));
-          });
-        },
+            // 对于没有该参数属性的，返回true，通过
+            return params.some((p) => {
+              if (item[p] === undefined) {
+                return;
+              }
+              if (item[p]?.match(CN_CHAR_REGEX) && !query.match(CN_CHAR_REGEX)) {
+                return pinyin(item[p] as any, {
+                  toneType: 'none',
+                  nonZh: 'consecutive',
+                }).replace(/\s/g, '')!.match(new RegExp(query, 'i'));
+              }
+              return item[p]!.match(new RegExp(query, 'i'));
+            });
+          },
       );
       if (filterItems.length === 0 && noResultsItem) {
         return [noResultsItem];
@@ -171,6 +172,30 @@ end try
     execSync(`[[ -d "${process.env.alfred_workflow_cache}" ]] || mkdir "${process.env.alfred_workflow_cache}"`);
   },
 
+  writeCacheData<T>(key: string, maxAge: number, data: T) {
+    return new Promise(resolve => {
+      fs.writeFile(`${process.env.alfred_workflow_cache}/${key}.cache`, JSON.stringify({
+        maxAge: Date.now() + maxAge,
+        data
+      }), resolve)
+    })
+  },
+
+  readCacheData<T>(key: string): Promise<T | null> {
+    return new Promise(resolve => {
+      fs.readFile(`${process.env.alfred_workflow_cache}/${key}.cache`, {encoding: 'utf8'}, (err, res) => {
+        if (err) {
+          resolve(null);
+        }
+        const data = JSON.parse(res) as { data: T, maxAge: number };
+        if (data.maxAge < Date.now()) {
+          resolve(null);
+        } else {
+          resolve(data.data);
+        }
+      })
+    })
+  },
   /**
    * 不添加新行打印
    * @param options

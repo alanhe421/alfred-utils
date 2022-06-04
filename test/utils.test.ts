@@ -132,3 +132,16 @@ test('escape path test', () => {
 test('write pic file test', () => {
   utils.writeToPicFileFromClipboard(`~/Desktop/aaa.png`);
 });
+
+test('cache script filter', async () => {
+  process.env.alfred_workflow_cache = `${__dirname}/.cache`;
+  const wf = new Workflow([], true);
+  await wf.runCacheData();
+  wf.addWorkflowItem({
+    item: {
+      title: '88888',
+      subtitle: 'hello123',
+    },
+  });
+  wf.run({}, 60 * 60 * 1000);
+});
