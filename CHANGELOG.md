@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.51](https://github.com/alanhg/alfred-utils/compare/v0.1.51-alpha.1...v0.1.51) (2022-06-04)
+
+
+### Bug Fixes
+
+* **workflow:** 支持script-filter数据缓存化 ([844ef6f](https://github.com/alanhg/alfred-utils/commit/844ef6fab425528a643dd3c9a0928136ebcec838))
+* **workflow:** 支持script-filter数据缓存化 ([edde641](https://github.com/alanhg/alfred-utils/commit/edde64174015facd0eae8450339a2b722d2adaec))
+
 ### [0.1.51-alpha.1](https://github.com/alanhg/alfred-utils/compare/v0.1.51-alpha.0...v0.1.51-alpha.1) (2022-06-04)
 
 
