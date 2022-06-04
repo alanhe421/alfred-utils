@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.51-alpha.0](https://github.com/alanhg/alfred-utils/compare/v0.1.50...v0.1.51-alpha.0) (2022-06-04)
+
+
+### Bug Fixes
+
+* **type:** 缓存支持 ([59391b0](https://github.com/alanhg/alfred-utils/commit/59391b01052340dcfd7ee5c1a2591d9e502b5f55))
+
 ### 0.1.50 (2022-04-24)
 
 

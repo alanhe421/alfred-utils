@@ -1,6 +1,6 @@
 {
   "name": "@stacker/alfred-utils",
-  "version": "0.1.50",
+  "version": "0.1.51-alpha.0",
   "description": "Offer some utils to improve alfred workflow development",
   "homepage": "https://github.com/alanhg/alfred-utils#readme",
   "bugs": {
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "release": "standard-version",
+    "release:alpha": "npm run release -- --prerelease alpha",
     "test": "TZ='Asia/Shanghai' jest",
     "tsc": "rimraf dist && tsc -p ./tsconfig.json",
     "build": "npm run tsc && cp lib/*.d.ts dist/"
