@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.51-alpha.1](https://github.com/alanhg/alfred-utils/compare/v0.1.51-alpha.0...v0.1.51-alpha.1) (2022-06-04)
+
+
+### Bug Fixes
+
+* **type:** add some export ([4d1607b](https://github.com/alanhg/alfred-utils/commit/4d1607b09ac113ba09cf973d96a550925a705894))
+
 ### [0.1.51-alpha.0](https://github.com/alanhg/alfred-utils/compare/v0.1.50...v0.1.51-alpha.0) (2022-06-04)
 
 
