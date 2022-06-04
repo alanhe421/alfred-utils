@@ -186,6 +186,7 @@ end try
       fs.readFile(`${process.env.alfred_workflow_cache}/${key}.cache`, {encoding: 'utf8'}, (err, res) => {
         if (err) {
           resolve(null);
+          return;
         }
         const data = JSON.parse(res) as { data: T, maxAge: number };
         if (data.maxAge < Date.now()) {

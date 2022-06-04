@@ -17,8 +17,8 @@ export class Workflow {
   /**
    * 缓存数据显示
    */
-  runWithCacheData(config: Omit<ScriptFilter, 'items'>) {
-    return utils.readCacheData<WorkflowItem[]>('script_filter').then(data => {
+  runWithCacheData(config: Omit<ScriptFilter, 'items'> = {rerun: 0.1}, cacheKey: string) {
+    return utils.readCacheData<WorkflowItem[]>(cacheKey).then(data => {
       if (data) {
         this.items = data;
         this.run(config);
@@ -31,8 +31,8 @@ export class Workflow {
    *
    * @param maxAge
    */
-  writeCacheData(maxAge: number) {
-    utils.writeCacheData('script_filter', maxAge, this.items);
+  writeCacheData(maxAge: number, cacheKey: string) {
+    utils.writeCacheData(cacheKey, maxAge, this.items);
   }
 
   /**
