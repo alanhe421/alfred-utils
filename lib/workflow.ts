@@ -17,14 +17,22 @@ export class Workflow {
   /**
    * 缓存数据显示
    */
-  runCacheData() {
+  runWithCacheData(config: Omit<ScriptFilter, 'items'>) {
     return utils.readCacheData<WorkflowItem[]>('script_filter').then(data => {
       if (data) {
         this.items = data;
-        this.run();
+        this.run(config);
         this.items = [];
       }
     });
+  }
+
+  /**
+   *
+   * @param maxAge
+   */
+  writeCacheData(maxAge: number) {
+    utils.writeCacheData('script_filter', maxAge, this.items);
   }
 
   /**
@@ -52,10 +60,7 @@ export class Workflow {
   /**
    * 输出
    */
-  run(config: Omit<ScriptFilter, 'items'> = {}, maxAge = 0) {
-    if (maxAge > 0) {
-      utils.writeCacheData('script_filter', maxAge, this.items);
-    }
+  run(config: Omit<ScriptFilter, 'items'> = {}) {
     console.log(JSON.stringify({
       ...config,
       items: this.convertWorkflowItems().sortedItems,

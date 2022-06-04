@@ -136,12 +136,11 @@ test('write pic file test', () => {
 test('cache script filter', async () => {
   process.env.alfred_workflow_cache = `${__dirname}/.cache`;
   const wf = new Workflow([], true);
-  await wf.runCacheData();
+  await wf.runWithCacheData();
   wf.addWorkflowItem({
     item: {
       title: '88888',
       subtitle: 'hello123',
     },
   });
-  wf.run({}, 60 * 60 * 1000);
 });

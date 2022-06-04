@@ -76,7 +76,7 @@ export interface ScriptFilter {
     [index: string]: string;
   },
   /**
-   * 0.1-5.0秒之后重新run
+   * 0.1-5.0秒之后重新run，不要随意的打印多次，如果有缓存数据，只需要更新到缓存数据内容即可
    * @since 3.2
    */
   rerun?: number;

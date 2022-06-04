@@ -23,7 +23,8 @@
     "release:alpha": "npm run release -- --prerelease alpha",
     "test": "TZ='Asia/Shanghai' jest",
     "tsc": "rimraf dist && tsc -p ./tsconfig.json",
-    "build": "npm run tsc && cp lib/*.d.ts dist/"
+    "build": "npm run tsc && cp lib/*.d.ts dist/",
+    "test:pkg": "npm run tsc && npm link"
   },
   "config": {
     "commitizen": {
