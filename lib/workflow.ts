@@ -1,6 +1,5 @@
 import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
 import utils, { CN_CHAR_REGEX } from './utils';
-import Utils from './utils';
 import { pinyin } from 'pinyin-pro';
 
 export class Workflow {
