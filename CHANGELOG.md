@@ -2,7 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-<<<<<<< HEAD
+### [0.1.53](https://github.com/alanhg/alfred-utils/compare/v0.1.52...v0.1.53) (2022-09-02)
+
 ### [0.1.52](https://github.com/alanhg/alfred-utils/compare/v0.1.51...v0.1.52) (2022-09-02)
 =======
 ### 0.1.52 (2022-09-02)
