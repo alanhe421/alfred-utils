@@ -1,5 +1,7 @@
 import { ScriptFilter, ScriptFilterItem, WorkflowItem } from './interface';
-import utils from "./utils";
+import utils, { CN_CHAR_REGEX } from './utils';
+import Utils from './utils';
+import { pinyin } from 'pinyin-pro';
 
 export class Workflow {
   private items: WorkflowItem[];
@@ -17,7 +19,7 @@ export class Workflow {
   /**
    * 缓存数据显示
    */
-  runWithCacheData(config: Omit<ScriptFilter, 'items'> = {rerun: 0.1}, cacheKey: string) {
+  runWithCacheData(config: Omit<ScriptFilter, 'items'> = { rerun: 0.1 }, cacheKey: string) {
     return utils.readCacheData<WorkflowItem[]>(cacheKey).then(data => {
       if (data) {
         this.items = data;
@@ -54,6 +56,40 @@ export class Workflow {
    */
   addWorkflowItem(item: WorkflowItem) {
     this.items.push(item);
+    return this;
+  }
+
+  /**
+   * 过滤结果集
+   */
+  filterWorkflowItemsBy(query = '',
+    params: (keyof Pick<ScriptFilterItem, 'title' | 'subtitle' | 'uid' | 'arg'>)[],
+    noResultsItem?: WorkflowItem) {
+    query = query.trim();
+    if (query) {
+      let filterItems = this.items.filter((item) => {
+          // 对于没有该参数属性的，返回true，通过
+          return params.some((p) => {
+            const scriptFilterItem = item.item;
+            if (scriptFilterItem[p] === undefined) {
+              return;
+            }
+            if (scriptFilterItem[p]?.match(CN_CHAR_REGEX) && !query.match(CN_CHAR_REGEX)) {
+              return pinyin(scriptFilterItem[p] as any, {
+                toneType: 'none',
+                nonZh: 'consecutive',
+              }).replace(/\s/g, '')!.match(new RegExp(query, 'i'));
+            }
+            return scriptFilterItem[p]!.match(new RegExp(query, 'i'));
+          });
+        },
+      );
+      if (filterItems.length === 0 && noResultsItem) {
+        this.items = [noResultsItem];
+      } else {
+        this.items = filterItems;
+      }
+    }
     return this;
   }
 
