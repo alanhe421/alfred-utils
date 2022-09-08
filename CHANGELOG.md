@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.54 (2022-09-08)
+
+
+### Bug Fixes
+
+* **tsc:** export missing ([ca4f70a](https://github.com/alanhg/alfred-utils/commit/ca4f70a06280b98e9ea14a92f28467d5fba316a9))
+
 ### [0.1.53](https://github.com/alanhg/alfred-utils/compare/v0.1.52...v0.1.53) (2022-09-02)
 
 ### [0.1.52](https://github.com/alanhg/alfred-utils/compare/v0.1.51...v0.1.52) (2022-09-02)
