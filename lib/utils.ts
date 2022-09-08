@@ -6,7 +6,7 @@ import fs from 'fs';
 
 
 const SPLIT_TOKEN = '✩';
-const CN_CHAR_REGEX = /[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
+export const CN_CHAR_REGEX = /[\u4E00-\u9FA5]|[\uFE30-\uFFA0]/gi;
 
 const pathUtils = {
   replaceSpace: (path: string) => path.replace(/\s/g, '%20'),
