@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.55 (2022-09-12)
+
+
+### Features
+
+* **utils:** 支持获取系统语言 ([c314e91](https://github.com/alanhg/alfred-utils/commit/c314e911403a948e070d2239156f16799a9375fe))
+
 ### 0.1.54 (2022-09-08)
 
 
