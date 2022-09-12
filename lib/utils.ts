@@ -131,6 +131,13 @@ const utils = {
   },
 
   /**
+   * 获取系统语言
+   */
+  getSystemLocale() {
+    return execSync(`osascript -e 'user locale of (get system info)'`);
+  },
+
+  /**
    * 剪贴板图片另存到某位置
    * @param filePath
    */
