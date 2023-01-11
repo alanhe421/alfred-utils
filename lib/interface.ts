@@ -40,6 +40,7 @@ export interface ScriptFilterItem {
   quicklookurl?: string;
   /**
    * 针对script filter,打开Alfred Filters Results选项，则可以利用Alfred直接按照关键词与match值进行匹配筛选，避免多次脚本执行
+   * Alfred Filters Results默认是按照title字段匹配筛选
    * 匹配大小写敏感
    */
   match?: string;
