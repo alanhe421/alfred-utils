@@ -69,7 +69,7 @@ export interface ScriptFilterItem {
      */
     auto?: string | string[];
   }
-  variables: ScriptFilter['variables'];
+  variables?: ScriptFilter['variables'];
 }
 
 export interface ScriptFilter {
