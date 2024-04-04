@@ -73,6 +73,7 @@ export interface ScriptFilterItem {
 }
 
 export interface ScriptFilter {
+  skipknowledge?: boolean;
   items: ScriptFilterItem[];
   variables?: {
     [index: string]: string;
@@ -82,4 +83,22 @@ export interface ScriptFilter {
    * @since 3.2
    */
   rerun?: number;
+}
+
+/**
+ * @see https://www.alfredapp.com/help/workflows/user-interface/text/json/
+ */
+export interface TextView {
+  variables: ScriptFilter['variables'];
+  rerun: number;
+  response: string;
+  footer: string;
+  behaviour: {
+    response: 'replace' | 'append' | 'prepend' | 'replacelast';
+    scroll: 'auto' | 'start' | 'end';
+    /**
+     * 缺省是clear
+     */
+    inputfield: 'clear' | 'select';
+  }
 }
