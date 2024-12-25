@@ -58,6 +58,11 @@ export class Workflow {
     return this;
   }
 
+  addWorkflowItems(items: WorkflowItem[]) {
+    items.forEach(item => this.addWorkflowItem(item));
+    return this;
+  }
+
   /**
    * 过滤结果集
    */
