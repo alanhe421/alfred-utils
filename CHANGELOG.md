@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.60 (2024-12-25)
+
+
+### Features
+
+* **lib/workflow:** 新增 addWorkflowItems 方法 ([38021cd](https://github.com/alanhg/alfred-utils/commit/38021cdb6390b2a27713f81315563de86835bd09))
+
 ### 0.1.59 (2024-04-04)
 
 ### 0.1.58 (2023-09-10)
